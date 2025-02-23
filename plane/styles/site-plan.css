@@ -1,0 +1,166 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon&family=Lato:wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --primary-color: #007BFF;  /* Sky Blue */
+  --secondary-color: #1C2E4A;  /* Navy Blue */
+  --accent1-color: #FFC107;  /* Gold */
+  --accent2-color: #FFFFFF;  /* White */
+}
+
+/* Set the max width of the page and center content */
+#content {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Header Grid */
+header {
+    display: grid;
+    grid-template-columns: 150px auto;
+    align-items: center;
+    background-color: var(--secondary-color);
+    color: var(--accent2-color);
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--secondary-color);
+}
+
+nav a {
+    color: var(--accent2-color);
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+nav a:hover {
+    background-color: var(--primary-color);
+    color: var(--accent2-color);
+}
+
+#logo_link {
+    justify-self: center;
+    align-self: center;
+}
+
+/* Hero Section */
+#hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+#hero-box img {
+    width: 100%;
+    height: auto;
+}
+
+#hero-msg {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#hero-msg h1 {
+    font-size: 3rem;
+    font-family: var(--heading-font);
+}
+
+#hero-msg h4 {
+    font-size: 1.5rem;
+}
+
+.button-box {
+    margin-top: 20px;
+}
+
+.book {
+    background-color: var(--primary-color);
+    color: var(--accent2-color);
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.book:hover {
+    background-color: var(--accent1-color);
+}
+
+/* Card Section */
+.home-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 0;
+}
+
+.rivers-card, .camping-card, .rapids-card {
+    text-align: center;
+    background: white;
+    padding: 15px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.card-img {
+    border: 5px solid var(--primary-color);
+    transition: transform .5s;
+    width: 100%;
+}
+
+.card-img:hover {
+    opacity: .8;
+    transform: scale(1.05);
+}
+
+/* Background & Message Section */
+#background {
+    background-color: var(--light-gray);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.msg {
+    background-color: var(--secondary-color);
+    color: var(--accent2-color);
+    padding: 20px;
+    width: 50%;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.join {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.join:hover {
+    background-color: var(--accent1-color);
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 20px;
+}
+
+/* Color Table */
+.primary { background-color: var(--primary-color); }
+.secondary { background-color: var(--secondary-color); }
+.accent1 { background-color: var(--accent1-color); }
+.accent2 { background-color: var(--accent2-color); }

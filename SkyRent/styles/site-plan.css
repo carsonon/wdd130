@@ -1,12 +1,19 @@
+/* ------------------------------------------------------
+   1) Google Font Import
+   ------------------------------------------------------ */
 /* if you are using any Google fonts change the font names below to your fonts. 
 Any spaces in your font name should be replaced with a +. 
 Fonts are separated by a | */
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato');
 
+
+/* ------------------------------------------------------
+   2) CSS Variables (Site Plan)
+   ------------------------------------------------------ */
 :root {
   /* change the values below to your colors from your palette */
-  --primary-color: #007BFF   ;
-  --secondary-color: #1C2E4A ;
+  --primary-color: #007BFF;
+  --secondary-color: #1C2E4A;
   --accent1-color: #FFC107;
   --accent2-color: #F4F4F4;
 
@@ -15,11 +22,11 @@ Fonts are separated by a | */
   --paragraph-font: Lato;
 
   /* these colors below should be chosen from among your palette colors above */
-  --headline-color-on-white: #396E94;  /* headlines on a white background */ 
-  --headline-color-on-color: white; /* headlines on a colored background */ 
-  --paragraph-color-on-white: #396E94; /* paragraph text on a white background */ 
-  --paragraph-color-on-color: white; /* paragraph text on a colored background */ 
-  --paragraph-background-color: #396E94  ;
+  --headline-color-on-white: #396E94;      /* headlines on a white background */
+  --headline-color-on-color: white;        /* headlines on a colored background */
+  --paragraph-color-on-white: #396E94;     /* paragraph text on a white background */
+  --paragraph-color-on-color: white;       /* paragraph text on a colored background */
+  --paragraph-background-color: #396E94;
   --nav-link-color: #396E94;
   --nav-background-color: #D4AC0D;
   --nav-hover-link-color: white;
@@ -27,6 +34,9 @@ Fonts are separated by a | */
 }
 
 
+/* ------------------------------------------------------
+   3) Base Styles from Site Plan
+   ------------------------------------------------------ */
 /*  Look around below...but DON'T CHANGE ANYTHING! */
 
 body {
@@ -35,6 +45,8 @@ body {
   padding: 4em;
   font-size: 18px;
   text-align: center;
+  /* Use your accent2-color for the page background: */
+  background-color: var(--accent2-color);
 }
 img {
   display: block;
@@ -52,6 +64,8 @@ hr {
   margin: 35px 0;
   background: var(--accent1-color);
 }
+
+/* Header (background color from your paragraph-background-color variable) */
 header {
   padding: 1em;
   text-align: center;
@@ -62,11 +76,14 @@ header > h1, header > h2 {
   color: var(--headline-color-on-color);
 }
 
+/* Paragraphs (text color on a white background) */
 p {
   font-family: var(--paragraph-font);
   color: var(--paragraph-color-on-white);
   padding: 1em;
 }
+
+/* Color Blocks Table (for site-plan.html preview) */
 .colors {
   width: 100%;
   min-width: 350px;
@@ -76,11 +93,10 @@ p {
 .colors th {
   background-color: #999;
 }
-.colors td{
+.colors td {
   width: 25%;
   height: 3em;
 }
-
 .primary {
   background-color: var(--primary-color);
 }
@@ -90,32 +106,33 @@ p {
 .accent1 {
   background-color: var(--accent1-color);
 }
-.accent2{
+.accent2 {
   background-color: var(--accent2-color);
 }
 
+/* Paragraph with a colored background (white text on var(--paragraph-background-color)) */
 p.colored {
   background-color: var(--paragraph-background-color);
   color: var(--paragraph-color-on-color);
 }
 
+/* Navigation */
 nav {
   background-color: var(--nav-background-color);
   line-height: 3em;
   text-align: center;
   font-size: 1.2em;
+  display: flex;
+  justify-content: center;
 }
-nav  {
+nav {
   list-style-type: none;
   display: flex;
-
 }
 nav a {
-  padding:1em;
+  padding: 10px;
   min-width: 120px;
   text-decoration: none;
-  padding: 10px;
-
 }
 nav a:link, nav a:visited {
   color: var(--nav-link-color);
@@ -125,21 +142,20 @@ nav a:hover {
   background-color: var(--nav-hover-background-color);
 }
 
+/* Sitemap Grid (used in site-plan.html) */
 .sitemap {
   display: grid;
   justify-content: center;
-
   grid-template-columns: repeat(6, 15%);
   grid-template-rows: 3em 1.5em 1.5em 3em;
-  grid-template-areas: ". . home home . ."
+  grid-template-areas: 
+    ". . home home . ."
     ". . . top . ."
     ". left left right right ."
     "page2 page2 . . page3 page3";
 }
 .sitemap > div {
-
   text-align: center;
-
 }
 .sm-home {
   grid-area: home;
@@ -156,20 +172,150 @@ nav a:hover {
   background-color: #ccc;
   line-height: 3em;
 }
-
 .top {
   grid-area: top;
   border-left: 1px solid;
 }
-
 .left {
   grid-area: left;
   border-top: 1px solid;
   border-left: 1px solid;
 }
-
 .right {
   grid-area: right;
   border-top: 1px solid;
   border-right: 1px solid;
+}
+
+
+/* ------------------------------------------------------
+   4) Additional Styles for Fleet & Contact Pages
+   ------------------------------------------------------ */
+
+/* Make sure main content has some spacing */
+main {
+  margin-top: 2em;
+}
+
+/* Fleet Page: .fleet-item sections */
+.fleet-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 2em auto;
+  max-width: 900px;
+  border: 2px solid var(--accent1-color);
+  padding: 1em;
+}
+.fleet-item figure {
+  flex: 1 1 300px;
+  margin: 1em;
+}
+.fleet-item figure img {
+  max-width: 100%;
+  height: auto;
+  border: 3px solid var(--primary-color);
+}
+.fleet-item article {
+  flex: 1 1 300px;
+  margin: 1em;
+  text-align: left;
+}
+
+/* Contact Page: .contact-images & .contact-form */
+.contact-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin: 2em auto;
+  max-width: 900px;
+}
+.contact-images figure {
+  flex: 1 1 300px;
+  margin: 1em;
+}
+.contact-images figure img {
+  max-width: 100%;
+  height: auto;
+  border: 3px solid var(--primary-color);
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 2em auto;
+  text-align: left;
+  border: 2px solid var(--accent1-color);
+  padding: 1em;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+.contact-form label {
+  margin: 0.5em 0 0.2em;
+  font-weight: bold;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid var(--accent1-color);
+  font-family: var(--paragraph-font);
+}
+.contact-form button {
+  padding: 0.7em;
+  background-color: var(--primary-color);
+  color: var(--headline-color-on-color);
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+.contact-form button:hover {
+  background-color: var(--nav-hover-background-color);
+}
+
+
+/* ------------------------------------------------------
+   5) Footer (matching header color)
+   ------------------------------------------------------ */
+footer {
+  margin-top: 2em;
+  padding: 1em;
+  text-align: center;
+  background-color: var(--paragraph-background-color);
+  color: var(--headline-color-on-color);
+}
+footer p {
+  margin-bottom: 10px;
+}
+footer a {
+  color: var(--accent1-color);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* ------------------------------------------------------
+   6) Responsive Adjustments
+   ------------------------------------------------------ */
+@media (max-width: 768px) {
+  body {
+    padding: 2em;
+  }
+  
+  nav {
+    flex-direction: column;
+  }
+
+  .fleet-item {
+    flex-direction: column;
+  }
+
+  .contact-images {
+    flex-direction: column;
+  }
 }

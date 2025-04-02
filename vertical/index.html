@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Country Info Tabs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Country Descriptions</h2>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Japan')" id="defaultOpen">Japan</button>
+  <button class="tablinks" onclick="openTab(event, 'Brazil')">Brazil</button>
+  <button class="tablinks" onclick="openTab(event, 'Kenya')">Kenya</button>
+</div>
+
+<div id="Japan" class="tabcontent">
+  <h3>Japan</h3>
+  <p>Japan is an island nation in East Asia known for its technology, culture, and strong economy. It has a high life expectancy and a very efficient public transportation system.</p>
+</div>
+
+<div id="Brazil" class="tabcontent">
+  <h3>Brazil</h3>
+  <p>Brazil is the largest country in South America. It's famous for its rainforests, soccer culture, and the Amazon River. It has a mixed economy and large urban centers like São Paulo and Rio de Janeiro.</p>
+</div>
+
+<div id="Kenya" class="tabcontent">
+  <h3>Kenya</h3>
+  <p>Kenya is located in East Africa and is known for its wildlife, savannahs, and national parks. Agriculture and tourism are major parts of its economy.</p>
+</div>
+
+<script>
+function openTab(evt, tabName) {
+  const tabcontent = document.getElementsByClassName("tabcontent");
+  for (let i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  const tablinks = document.getElementsByClassName("tablinks");
+  for (let i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+  }
+
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.classList.add("active");
+}
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>

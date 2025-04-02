@@ -1,0 +1,35 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+  }
+  
+  .tab {
+    float: left;
+    width: 20%;
+  }
+  
+  .tab button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  .tabcontent {
+    float: left;
+    padding: 20px;
+    width: 75%;
+    display: none;
+    border-left: 1px solid #ccc;
+  }
+  
